@@ -31,20 +31,38 @@ mysqli_close($db);
     <div class="site">
         <aside class="left">
             <h2>Promocje</h2>
+            <table>
+                <tr>
+                    <td>Warszawa</td>
+                    <td>od 600 zł</td>
+                </tr>
+                <tr>
+                    <td>Wenecja</td>
+                    <td>od 1200 zł</td>
+                </tr>
+                <tr>
+                    <td>Paryż</td>
+                    <td>od 1200 zł</td>
+                </tr>
             </table>
         </aside>
         <main>
             <h2>W tym roku jedziemy do...</h2>
             <?php foreach($obrazy as $obraz): ?>
+                <img src="<?= $obraz['nazwaPliku'] ?>" alt="<?= $obraz['podpis'] ?>" title="<?= $obraz['podpis'] ?>" />
             <?php endforeach; ?>
         </main>
         <aside class="right">
+            <h2>Kontakt</h2>
+            <a href="mailto:biuro@wycieczki.pl">napisz do nas</a>
+            <p>telefon: 111222333</p>
         </aside>
     </div>
     <section class="data">
         <h3>W poprzednich latach byliśmy...</h3>
         <ol>
             <?php foreach($wycieczki as $wycieczka): ?>
+                <li>Dnia <?= $wycieczka['dataWyjazdu'] ?> pojechaliśmy do <?= $wycieczka['cel'] ?></li>
             <?php endforeach ?>
         </ol>
     </section>
